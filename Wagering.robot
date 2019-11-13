@@ -1,17 +1,12 @@
 *** Setting ***
 Library               Collections
-Library               CustomSeleniumLibrary                              WITH NAME                                                                    SeleniumLibrary
-Library               OperatingSystem
-Library               BuiltIn
-Resource              ${EXECDIR}/Framework/Keywords/Framework.robot
-Resource              ${EXECDIR}/User Keywords/Login.robot
-Resource              ${EXECDIR}/User Keywords/Suite operations.robot
-
-#Test Setup           Suite operations.Test_set_up_user                  ${True}
 
 *** Test Cases ***
-Registration
+Wagering
 
+                      Open Browser      https://qaplaydigital192.dev.igt.com    gc
+                      Maximize Browser Window
+                      sleep       5
                       SeleniumLibrary.Wait Until Element Is Visible      //*[@class='btn btn-login btn-account-header br-0 cta-login']                timeout=20
                       SeleniumLibrary.Click Element                      //*[@class='btn btn-login btn-account-header br-0 cta-login']
                       SeleniumLibrary.Wait Until Element Is Visible      //*[@id='loginModal-username']                                               timeout=20
